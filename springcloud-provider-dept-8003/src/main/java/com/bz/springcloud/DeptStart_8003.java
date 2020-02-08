@@ -1,0 +1,16 @@
+package com.bz.springcloud;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+@SpringBootApplication
+@EnableEurekaClient //在服务启动后自动注册到服务中心
+@EnableDiscoveryClient  //服务发现
+public class DeptStart_8003 {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DeptStart_8003.class);
+    }
+}

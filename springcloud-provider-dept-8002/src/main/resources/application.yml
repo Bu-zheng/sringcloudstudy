@@ -1,0 +1,35 @@
+server:
+  port: 8002
+
+#mybatis配置
+mybatis:
+  type-handlers-package: com.bz.springcloud.bean
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  # spring boot集成mybatis的方式打印sql
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#spring的配置
+spring:
+  application:
+    name: springcloud-provider-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/db02?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+
+#Eureka配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+    instance:
+      instance-id: springcloud-privoder-dept8002  #修改eureka的上的默认信息
+##配置Eureka的信息
+info:
+  app.name: buzheng-springcloud
+  company.name: bz.com
+
